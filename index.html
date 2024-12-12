@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styl8.css">
+    <title>Fryzjerstwo</title>
+</head>
+<script>
+    function odkryj(){
+        let krotkie = document.querySelector("#krotkie").checked;
+        let krotkieN = parseFloat(document.querySelector("#krotkieN").innerText);
+
+        let srednie = document.querySelector("#srednie").checked;
+        let srednieN = document.querySelector("#srednieN").innerText;
+
+        let poldlugie = document.querySelector("#poldlugie").checked;
+        let poldlugieN = document.querySelector("#poldlugieN").innerText;
+
+        let dlugie = document.querySelector("#dlugie").checked;
+        let dlugieN = document.querySelector("#dlugieN").innerText;
+
+        let znizka = 10;
+
+        if(krotkie) 
+        document.querySelector("#result").innerHTML = "cena promocyjna: " + (krotkieN - znizka);
+        if(srednie) 
+        document.querySelector("#result").innerHTML = "cena promocyjna: " + (srednieN - znizka);
+        if(poldlugie) 
+        document.querySelector("#result").innerHTML = "cena promocyjna: " + (poldlugieN - znizka);
+        if(dlugie) 
+        document.querySelector("#result").innerHTML = "cena promocyjna: " + (dlugieN - znizka); 
+    }
+</script>
+<body>
+    <main>
+        <section id="lewy">
+            <section id="lewy1">
+                <h1><a href="index.html">SALON FRYZJERSKI</a></h1>
+            </section>
+            <section id="lewy2">
+                <img src="obraz2.2.jpg" alt="Strzyżenie">
+            </section>
+            <section id="lewy2_2" style="display: none">
+                <h2>PROMOCJA!</h2>
+                <input type="radio" name="radio" id="krotkie">Krótkie <br>
+                <input type="radio" name="radio" id="srednie">Średnie <br>
+                <input type="radio" name="radio" id="poldlugie">Półdługie <br>
+                <input type="radio" name="radio" id="dlugie">Długie <br>
+                <button onclick="odkryj()">Odkryj promocję</button>
+                <p id="result"></p>
+            </section>
+            <section id="lewy3">
+                <p>Witaj! Miło nam, że odwiedziłeś nasz salon. Sprawdź promocje!</p>
+                <h4>Kontakt: 444 555 666</h4>
+            </section>
+        </section>
+        <section id="prawy">
+            <section id="prawy1">
+                <script>
+                    function ceny(){
+                        document.querySelector("#lewy2").style.display="none";
+                        document.querySelector("#lewy2_2").style.display="block";
+                    }
+                </script>
+                <h4><a href="#" onclick="ceny()">Ceny strzyżenia</a></h4>
+                <table>
+                    <tr><th>Długość włosów</th><th>Cena</th></tr>
+                    <tr><td>Krótkie</td><td id="krotkieN">25</td></tr>
+                    <tr><td>Średnie</td><td id="srednieN">30</td></tr>
+                    <tr><td>Półdługie</td><td id="poldlugieN">40</td></tr>
+                    <tr><td>Długie</td><td id="dlugieN">50</td></tr>
+                </table>
+            </section>
+            <section id="prawy2">
+                <img src="obraz1.1.jpg" alt="Fryzjerka">
+            </section>
+        </section>
+    </main>
+    <section id="stopka">
+        Autor: 2115657
+    </section>
+</body>
+</html>
